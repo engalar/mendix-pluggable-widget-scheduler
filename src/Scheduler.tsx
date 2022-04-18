@@ -1,5 +1,5 @@
 import { createElement, useMemo } from "react";
-import { GraphContainerProps } from "../typings/GraphProps";
+import { GraphContainerProps } from "../typings/SchedulerProps";
 import { ValueStatus } from 'mendix';
 
 export default function (props: GraphContainerProps) {
