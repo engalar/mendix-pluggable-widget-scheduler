@@ -1,8 +1,8 @@
 import { createElement, useMemo } from "react";
-import { GraphContainerProps } from "../typings/SchedulerProps";
+import { SchedulerContainerProps } from "../typings/SchedulerProps";
 import { ValueStatus } from 'mendix';
 
-export default function (props: GraphContainerProps) {
+export default function (props: SchedulerContainerProps) {
     console.log(props);
     const value = useMemo(() => {
         if (props.attribute && props.attribute.status === ValueStatus.Available) {
