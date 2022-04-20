@@ -1,8 +1,9 @@
-import { CSSProperties, ReactChild } from "react";
+import { CSSProperties, Fragment, ReactChild } from "react";
 import PropTypes from "prop-types";
 import { Tabs, Tab, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Theme } from "@mui/system";
+import { createElement } from "react";
 
 interface TabPanelProps {
   value: string | number;
@@ -11,7 +12,7 @@ interface TabPanelProps {
 }
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
-  return value === index ? <Box {...other}>{children}</Box> : <></>;
+  return value === index ? <Box {...other}>{children}</Box> : <Fragment></Fragment>;
 }
 
 TabPanel.propTypes = {

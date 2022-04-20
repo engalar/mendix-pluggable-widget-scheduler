@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createElement } from "react";
 import DateProvider from "../hoc/DateProvider";
 import DatePicker from "@mui/lab/DatePicker";
 import { Button } from "@mui/material";
@@ -26,7 +27,7 @@ const WeekDateBtn = ({
 
   const toggleDialog = () => setOpen(!open);
 
-  const handleChange = (e: Date | null, k?: string) => {
+  const handleChange = (e: Date | null, _k?: string) => {
     onChange(e || new Date(), "selectedDate");
   };
 

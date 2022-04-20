@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import { format, getMonth, setMonth } from "date-fns";
 import { LocaleArrow } from "../common/LocaleArrow";
 import { useAppState } from "../../hooks/useAppState";
+import { createElement } from "react";
 
 interface MonthDateBtnProps {
   selectedDate: Date;
@@ -18,7 +19,7 @@ const MonthDateBtn = ({ selectedDate, onChange }: MonthDateBtnProps) => {
 
   const toggleDialog = () => setOpen(!open);
 
-  const handleChange = (e: Date | null, k?: string) => {
+  const handleChange = (e: Date | null, _k?: string) => {
     onChange(e || new Date(), "selectedDate");
   };
   const handlePrev = () => {

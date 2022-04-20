@@ -2,6 +2,7 @@ import DateProvider from "../hoc/DateProvider";
 import DatePicker from "@mui/lab/DatePicker";
 import DateTimePicker from "@mui/lab/DateTimePicker";
 import { TextField } from "@mui/material";
+import { createElement } from "react";
 
 interface EditorDatePickerProps {
   type: "date" | "datetime";
@@ -22,7 +23,7 @@ const EditorDatePicker = ({
   name,
   onChange,
   variant,
-  modalVariant,
+  // modalVariant,
   error,
   errMsg,
 }: EditorDatePickerProps) => {

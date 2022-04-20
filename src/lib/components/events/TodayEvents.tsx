@@ -4,6 +4,8 @@ import { differenceInMinutes, setHours } from "date-fns";
 import { traversCrossingEvents } from "../../helpers/generals";
 import { BORDER_HEIGHT } from "../../helpers/constants";
 import { Fragment } from "react";
+import { createElement } from "react";
+
 
 interface TodayEventsProps {
   todayEvents: ProcessedEvent[];
@@ -25,7 +27,7 @@ const TodayEvents = ({
 
   return (
     <Fragment>
-      {todayEvents.map((event, i) => {
+      {todayEvents.map((event, _i) => {
         const height =
           differenceInMinutes(event.end, event.start) * minuteHeight;
         const minituesFromTop = differenceInMinutes(

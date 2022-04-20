@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
+import { createElement } from "react";
 import {
   FormControl,
   FormHelperText,
@@ -84,7 +85,7 @@ const EditorSelect = ({
     onChange(name, val, isValid);
   };
   return (
-    <>
+    <Fragment>
       <FormControl
         variant={variant || "outlined"}
         fullWidth
@@ -164,7 +165,7 @@ const EditorSelect = ({
       <FormHelperText style={{ color: theme.palette.error.main }}>
         {state.touched && !state.valid && state.errorMsg}
       </FormHelperText>
-    </>
+    </Fragment>
   );
 };
 

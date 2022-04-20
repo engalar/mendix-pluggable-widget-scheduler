@@ -9,6 +9,7 @@ import {
   Slide,
   Paper,
 } from "@mui/material";
+import { createElement } from "react";
 import { format } from "date-fns";
 import { ProcessedEvent } from "../../types";
 import { useAppState } from "../../hooks/useAppState";
@@ -320,7 +321,7 @@ const EventItem = ({
       <Popover
         open={Boolean(anchorEl)}
         anchorEl={anchorEl}
-        onClose={(e) => {
+        onClose={() => {
           triggerViewer();
         }}
         anchorOrigin={{

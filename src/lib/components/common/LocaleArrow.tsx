@@ -3,6 +3,7 @@ import NavigateBeforeRoundedIcon from "@mui/icons-material/NavigateBeforeRounded
 import NavigateNextRoundedIcon from "@mui/icons-material/NavigateNextRounded";
 import { IconButton } from "@mui/material";
 import { MouseEvent } from "react";
+import { createElement } from "react";
 
 interface LocaleArrowProps {
   type: "prev" | "next";

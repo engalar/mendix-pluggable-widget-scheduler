@@ -13,6 +13,8 @@ import { DayDateBtn } from "./DayDateBtn";
 import { MonthDateBtn } from "./MonthDateBtn";
 import { useAppState } from "../../hooks/useAppState";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { createElement } from "react";
+
 
 export type View = "month" | "week" | "day";
 
@@ -91,7 +93,7 @@ const Navigation = () => {
               <Popover
                 open={Boolean(anchorEl)}
                 anchorEl={anchorEl}
-                onClose={(e) => {
+                onClose={(_e) => {
                   toggleMoreMenu();
                 }}
                 anchorOrigin={{

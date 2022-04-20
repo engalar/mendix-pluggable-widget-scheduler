@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import { format, addDays } from "date-fns";
 import { LocaleArrow } from "../common/LocaleArrow";
 import { useAppState } from "../../hooks/useAppState";
+import { createElement } from "react";
 
 interface DayDateBtnProps {
   selectedDate: Date;
@@ -16,7 +17,7 @@ const DayDateBtn = ({ selectedDate, onChange }: DayDateBtnProps) => {
   const [open, setOpen] = useState(false);
   const toggleDialog = () => setOpen(!open);
 
-  const handleChange = (e: Date | null, k?: string) => {
+  const handleChange = (e: Date | null, _k?: string) => {
     onChange(e || new Date(), "selectedDate");
   };
 

@@ -1,8 +1,9 @@
-import { ReactChild } from "react";
+import { Fragment, ReactChild } from "react";
 import { useAppState } from "../../hooks/useAppState";
 import { DefaultRecourse } from "../../types";
 import { ResourceHeader } from "./ResourceHeader";
 import { ButtonTabProps, ButtonTabs } from "./Tabs";
+import { createElement } from "react";
 
 interface WithResourcesProps {
   renderChildren(resource: DefaultRecourse): ReactChild;
@@ -21,14 +22,14 @@ const ResourcesTables = ({ renderChildren }: WithResourcesProps) => {
   const { resources, resourceFields } = useAppState();
 
   return (
-    <>
+    <Fragment>
       {resources.map((res: DefaultRecourse, i: number) => (
         <div key={`${res[resourceFields.idField]}_${i}`}>
           <ResourceHeader resource={res} />
           {renderChildren(res)}
         </div>
       ))}
-    </>
+    </Fragment>
   );
 };
 
@@ -40,7 +41,7 @@ const ResourcesTabTables = ({ renderChildren }: WithResourcesProps) => {
     return {
       id: res[resourceFields.idField],
       label: <ResourceHeader resource={res} />,
-      component: <>{renderChildren(res)}</>,
+      component: <Fragment>{renderChildren(res)}</Fragment>,
     };
   });
 

@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { alpha } from "@mui/material";
 
-export const Wrapper = styled("div")(({ theme }) => ({
+export const Wrapper = styled("div")(({ theme: _theme }) => ({
   position: "relative",
   overflow: "hidden",
   "& .rs__table_loading": {

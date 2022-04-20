@@ -10,6 +10,7 @@ import {
   isWithinInterval,
   startOfWeek,
 } from "date-fns";
+import { createElement } from "react";
 import { ProcessedEvent } from "../../types";
 import { Typography } from "@mui/material";
 import EventItem from "./EventItem";

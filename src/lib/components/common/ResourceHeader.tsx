@@ -8,6 +8,7 @@ import {
 import { useAppState } from "../../hooks/useAppState";
 import { useWindowResize } from "../../hooks/useWindowResize";
 import { DefaultRecourse } from "../../types";
+import { createElement } from "react";
 
 interface ResourceHeaderProps {
   resource: DefaultRecourse;
