@@ -31,7 +31,7 @@ const SchedulerComponent = () => {
         <div className="rs__table_loading">
           <span>
             <CircularProgress size={50} />
-            <Typography align="center">Loading...</Typography>
+            <Typography align="center">加载中...</Typography>
           </span>
         </div>
       )}

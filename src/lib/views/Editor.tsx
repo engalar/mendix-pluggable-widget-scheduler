@@ -64,19 +64,19 @@ const initialState = (
       value: event?.title || "",
       validity: !!event?.title,
       type: "input",
-      config: { label: "Title", required: true, min: 3 },
+      config: { label: "标题", required: true, min: 3 },
     },
     start: {
       value: event?.start || new Date(),
       validity: true,
       type: "date",
-      config: { label: "Start", sm: 6 },
+      config: { label: "开始时间", sm: 6 },
     },
     end: {
       value: event?.end || new Date(),
       validity: true,
       type: "date",
-      config: { label: "End", sm: 6 },
+      config: { label: "结束时间", sm: 6 },
     },
     ...customFields,
   };
@@ -207,7 +207,7 @@ const Editor = () => {
     }
     return (
       <Fragment>
-        <DialogTitle>{selectedEvent ? "Edit Event" : "Add Event"}</DialogTitle>
+        <DialogTitle>{selectedEvent ? "编辑事件" : "新增事件"}</DialogTitle>
         <DialogContent style={{ overflowX: "hidden" }}>
           <Grid container spacing={1}>
             {Object.keys(state).map((key) => {
@@ -222,10 +222,10 @@ const Editor = () => {
         </DialogContent>
         <DialogActions>
           <Button color="inherit" fullWidth onClick={() => handleClose()}>
-            Cancel
+            取消
           </Button>
           <Button color="primary" fullWidth onClick={handleConfirm}>
-            Confirm
+            确认
           </Button>
         </DialogActions>
       </Fragment>

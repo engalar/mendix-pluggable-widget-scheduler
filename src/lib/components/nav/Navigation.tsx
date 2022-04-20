@@ -15,6 +15,11 @@ import { useAppState } from "../../hooks/useAppState";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { createElement } from "react";
 
+const dic = {
+  month: '月',
+  week: '周',
+  day: '天'
+}
 
 export type View = "month" | "week" | "day";
 
@@ -63,7 +68,7 @@ const Navigation = () => {
       {renderDateSelector()}
       <div>
         <Button onClick={() => handleState(new Date(), "selectedDate")}>
-          Today
+          今天
         </Button>
         {views.length > 1 &&
           (isDesktop ? (
@@ -77,7 +82,7 @@ const Navigation = () => {
                   handleState(v, "view");
                 }}
               >
-                {v}
+                {dic[v]}
               </Button>
             ))
           ) : (
