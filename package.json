@@ -6,6 +6,12 @@
   "packagePath": "mendixcn",
   "author": "wengao.liu@siemens.com",
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": ">=5.0.0",
+    "@mui/lab": ">=5.0.0-alpha",
+    "@mui/material": ">=5.0.0",
+    "date-fns": ">=2.2",
     "ahooks": "^2.10.14",
     "classnames": "^2.2.6"
   },

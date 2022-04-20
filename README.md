@@ -1,3 +1,4 @@
+![](img/snap.png)
 # mendix 前端组件开发模板库
 
 # 创建脚手架

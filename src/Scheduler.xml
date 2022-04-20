@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="mendixcn.scheduler.Scheduler" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+<widget id="mendixcn.scheduler.Scheduler" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
     <name>Scheduler</name>
     <description>My widget description</description>
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="sampleText" type="string" required="false">
-                <caption>Default value</caption>
-                <description>Sample text input</description>
+            <property key="events" type="datasource" required="true" isList="true">
+                <caption>事件数据源</caption>
+                <description/>
             </property>
-            <property key="attribute" type="attribute" required="false">
-                <caption>Attribute</caption>
+            <property key="attStart" type="attribute" required="true" dataSource="events">
+                <caption>开始时间</caption>
                 <description/>
                 <attributeTypes>
-                    <attributeType name="String"/>
+                    <attributeType name="DateTime"/>
                 </attributeTypes>
             </property>
-            <property key="datasource" type="datasource" required="true" isList="true">
-                <caption>Data Source</caption>
+            <property key="attEnd" type="attribute" required="true" dataSource="events">
+                <caption>结束时间</caption>
                 <description/>
+                <attributeTypes>
+                    <attributeType name="DateTime"/>
+                </attributeTypes>
             </property>
-            <property key="att2" type="attribute" required="false" dataSource="datasource">
-                <caption>att2</caption>
+            <property key="attTitle" type="attribute" required="true" dataSource="events">
+                <caption>事件标题</caption>
                 <description/>
                 <attributeTypes>
                     <attributeType name="String"/>

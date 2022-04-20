@@ -4,17 +4,17 @@
  * @author Mendix UI Content Team
  */
 import { CSSProperties } from "react";
-import { EditableValue, ListValue, ListAttributeValue } from "mendix";
+import { ListValue, ListAttributeValue } from "mendix";
 
 export interface SchedulerContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
-    sampleText: string;
-    attribute?: EditableValue<string>;
-    datasource: ListValue;
-    att2?: ListAttributeValue<string>;
+    events: ListValue;
+    attStart: ListAttributeValue<Date>;
+    attEnd: ListAttributeValue<Date>;
+    attTitle: ListAttributeValue<string>;
 }
 
 export interface SchedulerPreviewProps {
@@ -22,8 +22,8 @@ export interface SchedulerPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
-    sampleText: string;
-    attribute: string;
-    datasource: {} | { type: string } | null;
-    att2: string;
+    events: {} | { type: string } | null;
+    attStart: string;
+    attEnd: string;
+    attTitle: string;
 }

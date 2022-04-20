@@ -1,14 +1,27 @@
 import { createElement, useMemo } from "react";
+import locale from 'date-fns/locale/zh-CN';
 import { SchedulerContainerProps } from "../typings/SchedulerProps";
+import { Scheduler } from "./lib/Scheduler";
 import { ValueStatus } from 'mendix';
+import { ProcessedEvent } from "./lib/types";
 
 export default function (props: SchedulerContainerProps) {
-    console.log(props);
-    const value = useMemo(() => {
-        if (props.attribute && props.attribute.status === ValueStatus.Available) {
-            return props.attribute.value;
-        }
-    }, [props.attribute])
+  const events: ProcessedEvent[] = useMemo(() => {
+    if (props.events.status ===
+      ValueStatus.Available) {
+      return props.events.items!.map<ProcessedEvent>(obj => ({
+        event_id: obj.id.toString(),
+        title: props.attTitle.get(obj).value!,
+        start: props.attStart.get(obj).value!,
+        end: props.attEnd.get(obj).value!,
+      }));
+    }
+    return [];
+  }, [props.events])
 
-    return <div>hello {props.sampleText} and your value is {value}</div>;
+  return <Scheduler
+    locale={locale}
+    view="month"
+    events={events}
+  />;
 }

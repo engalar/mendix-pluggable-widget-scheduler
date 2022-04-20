@@ -37,14 +37,14 @@ export interface stateContext extends SchedulerState {
 export const defaultProps = {
   height: 600,
   month: {
-    weekDays: [0, 1, 2, 3, 4, 5],
-    weekStartOn: 6,
+    weekDays: [0, 1, 2, 3, 4, 5, 6],
+    weekStartOn: 1,
     startHour: 9,
     endHour: 17,
   },
   week: {
-    weekDays: [0, 1, 2, 3, 4, 5],
-    weekStartOn: 6,
+    weekDays: [0, 1, 2, 3, 4, 5, 6],
+    weekStartOn: 1,
     startHour: 9,
     endHour: 17,
     step: 60,
